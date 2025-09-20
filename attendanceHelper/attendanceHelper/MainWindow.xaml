@@ -5,32 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:attendanceHelper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <!-- 标题 -->
-        <TextBlock Text="随机考勤小工具-计原25" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" Margin="60,50,0,0" VerticalAlignment="Top"/>
+        Title="MainWindow" Height="600" Width="900">
+    <Canvas>
+        <!-- Title -->
+        <TextBlock Text="AttendanceHelper" FontSize="20" Foreground="#195C72" Canvas.Left="20" Canvas.Top="20"/>
 
-        <!-- 密码输入 -->
-        <TextBlock Text="密码:" FontSize="16" HorizontalAlignment="Left" Margin="119,190,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="PasswordTextBox" Text="Code Here" Width="220" Height="28" HorizontalAlignment="Left" Margin="179,185,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="isOK" Content="确认密码" Width="100" Height="28" HorizontalAlignment="Left" Margin="419,185,0,0" VerticalAlignment="Top" Click="isOK_Click_1"/>
+        <!-- Description -->
+        <TextBlock Text="here is five text boxes ,the names will exchange like swipe life to right,and will stop" FontSize="16" Foreground="#195C72" Canvas.Left="200" Canvas.Top="70"/>
 
-        <!-- GlobalCode显示 -->
-        <TextBlock x:Name="GlobalCodeHere" FontSize="16" HorizontalAlignment="Left" Margin="179,220,0,0" VerticalAlignment="Top" Width="326" Text=""/>
+        <!-- Name Boxes -->
+        <TextBox Text="NAME1" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Canvas.Left="120" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox Text="NAME2" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Canvas.Left="250" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox Text="NAME3" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Red" BorderThickness="2" Canvas.Left="380" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox Text="NAME4" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Canvas.Left="510" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox Text="NAME5" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Canvas.Left="640" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-        <!-- 四个主要操作按钮 -->
-        <Button x:Name="导入名单" Content="导入名单" Width="120" Height="48" HorizontalAlignment="Left" Margin="79,270,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="查看考勤情况" Content="查看考勤情况" Width="120" Height="48" HorizontalAlignment="Left" Margin="259,270,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="导出名单" Content="导出名单" Width="120" Height="48" HorizontalAlignment="Left" Margin="439,270,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="开始考勤" Content="开始考勤" Width="120" Height="48" HorizontalAlignment="Left" Margin="619,270,0,0" VerticalAlignment="Top"/>
+        <!-- IMPORT/EXPORT -->
+        <Button Content="IMPORT" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="107" Canvas.Top="277" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button Content="EXPORT" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="307" Canvas.Top="277" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-        <!-- 作者信息和链接 -->
-        <TextBlock Text="ByYupeng" FontSize="14" HorizontalAlignment="Left" Margin="80,380,0,0" VerticalAlignment="Top"/>
-        <TextBlock Text="https://github.com/yupengsky/randomAttendance" FontSize="12" HorizontalAlignment="Left" Margin="80,400,0,0" VerticalAlignment="Top"/>
+        <!-- Today is .. -->
+        <Button Content="Today is .." Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="107" Canvas.Top="368" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox Width="180" Height="50" FontSize="16" Canvas.Left="307" Canvas.Top="368" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-        <!-- 右下角未注册 -->
-        <TextBlock x:Name="stateText" Text="未注册" FontSize="14" HorizontalAlignment="Right" Margin="0,0,40,20" VerticalAlignment="Bottom"/>
-        <TextBlock x:Name="tips" FontSize="16" HorizontalAlignment="Left" Margin="119,140,0,0" VerticalAlignment="Top" Width="326" Text="输入密码以进入教师模式。"/>
-        <TextBlock x:Name="error" FontSize="16" HorizontalAlignment="Left" Margin="545,190,0,0" VerticalAlignment="Top" Width="134" Visibility="Collapsed"><Run Language="zh-cn" Text="密码错误。"/></TextBlock>
-    </Grid>
+        <!-- GO/STOP/GO then STOP -->
+        <Button Content="GO!" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="610" Canvas.Top="248"/>
+        <Button Content="STOP!" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="610" Canvas.Top="319" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button Content="GO then STOP" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="610" Canvas.Top="393" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <!-- Footer -->
+        <TextBlock Text="ByYupeng" FontSize="16" Foreground="#195C72" Canvas.Left="370" Canvas.Top="520"/>
+        <TextBlock Text="https://github.com/yupengsky/attendanceHelper" FontSize="14" Foreground="#195C72" Canvas.Left="270" Canvas.Top="550"/>
+    </Canvas>
 </Window>

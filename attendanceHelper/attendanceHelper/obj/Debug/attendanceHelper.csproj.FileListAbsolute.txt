@@ -14,5 +14,3 @@ E:\Work\Git\Projects\attendanceHelper\attendanceHelper\attendanceHelper\obj\Debu
 E:\Work\Git\Projects\attendanceHelper\attendanceHelper\attendanceHelper\obj\Debug\attendanceHelper.exe
 E:\Work\Git\Projects\attendanceHelper\attendanceHelper\attendanceHelper\obj\Debug\attendanceHelper.pdb
 E:\Work\Git\Projects\attendanceHelper\attendanceHelper\attendanceHelper\obj\Debug\attendanceHelper.exe.config
-E:\Work\Git\Projects\attendanceHelper\attendanceHelper\attendanceHelper\obj\Debug\HelloTeacher.g.cs
-E:\Work\Git\Projects\attendanceHelper\attendanceHelper\attendanceHelper\obj\Debug\HelloTeacher.baml

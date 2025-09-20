@@ -13,6 +13,5 @@ namespace attendanceHelper
     /// </summary>
     public partial class App : Application
     {
-        public static string GlobalCode = string.Empty;
     }
 }

@@ -1,57 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace attendanceHelper
 {
+    /// <summary>
+    /// MainWindow.xaml 的交互逻辑
+    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-            CheckStateAndOpenHelloTeacher();
-            // 初始化按钮状态
-            isOK.IsEnabled = true;
-            ((Button)this.FindName("导入名单")).IsEnabled = false;
-            ((Button)this.FindName("查看考勤情况")).IsEnabled = false;
-            ((Button)this.FindName("导出名单")).IsEnabled = false;
-            ((Button)this.FindName("开始考勤")).IsEnabled = false;
-            //GlobalCodeHere.Text = App.GlobalCode;
-        }
-
-        private void CheckStateAndOpenHelloTeacher()
-        {
-            if (stateText != null && stateText.Text == "未注册")
-            {
-                var helloTeacherWindow = new HelloTeacher();
-                helloTeacherWindow.Show();
-            }
-        }
-
-        public void EnableIsOKButton()
-        {
-            isOK.IsEnabled = true;
-        }
-
-        private void isOK_Click(object sender, RoutedEventArgs e)
-        {
-            if (PasswordTextBox.Text == App.GlobalCode)
-            {
-                //to do here fore error
-                tips.Text = "已经进入教师模式";
-                ((Button)this.FindName("导入名单")).IsEnabled = true;
-                ((Button)this.FindName("查看考勤情况")).IsEnabled = true;
-                ((Button)this.FindName("导出名单")).IsEnabled = true;
-                ((Button)this.FindName("开始考勤")).IsEnabled = true;
-            }
-            //to do here for error 
-        }
-
-        private void isOK_Click_1(object sender, RoutedEventArgs e)
-        {
-            // 兼容XAML中的Click事件
-            isOK_Click(sender, e);
         }
     }
 }
