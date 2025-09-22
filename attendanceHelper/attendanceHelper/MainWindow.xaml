@@ -43,6 +43,6 @@
         <Button Content="Shuffle" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="107" Canvas.Top="361" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ShuffleButton_Click"/>
         <Button Content="结束考勤" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="107" Canvas.Top="434" Click="EndAttendanceButton_Click" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBlock x:Name="state" FontSize="20" Foreground="#195C72" Canvas.Left="526" Canvas.Top="33" HorizontalAlignment="Left" VerticalAlignment="Center" Width="325" Text=""/>
-        <TextBlock FontSize="20" Foreground="#195C72" Canvas.Left="438" Canvas.Top="33" HorizontalAlignment="Left" VerticalAlignment="Center"><Run Language="zh-cn" Text="State:"/></TextBlock>
+        <TextBlock FontSize="20" Foreground="#195C72" Canvas.Left="438" Canvas.Top="33" HorizontalAlignment="Left" VerticalAlignment="Center"><Run Language="zh-cn" Text="Note"/><Run Text=":"/></TextBlock>
     </Canvas>
 </Window>
