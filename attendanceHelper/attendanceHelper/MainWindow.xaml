@@ -13,33 +13,36 @@
         <!-- Description -->
 
         <!-- Name Boxes -->
-        <TextBox x:Name="NameBox1" Text="NAME1" Width="120" Height="50" FontSize="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="2" Canvas.Left="120" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top" UndoLimit="98"/>
-        <TextBox x:Name="NameBox2" Text="NAME2" Width="120" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="2" Canvas.Left="250" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="11"/>
-        <TextBox x:Name="NameBox3" Text="NAME3" Width="120" Height="78" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Red" BorderThickness="2" Canvas.Left="375" Canvas.Top="138" HorizontalAlignment="Left" VerticalAlignment="Top" TextChanged="NameBox3_TextChanged"/>
-        <TextBox x:Name="NameBox4" Text="NAME4" Width="120" Height="50" FontSize="11" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="2" Canvas.Left="510" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <TextBox x:Name="NameBox5" Text="NAME5" Width="120" Height="50" FontSize="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="2" Canvas.Left="640" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="NameBox1" Text="NAME1" Width="120" Height="50" FontSize="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="2" Canvas.Left="117" Canvas.Top="111" HorizontalAlignment="Left" VerticalAlignment="Top" UndoLimit="98"/>
+        <TextBox x:Name="NameBox2" Text="NAME2" Width="120" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="2" Canvas.Left="247" Canvas.Top="111" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="11"/>
+        <TextBox x:Name="NameBox3" Text="NAME3" Width="120" Height="78" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Red" BorderThickness="2" Canvas.Left="372" Canvas.Top="97" HorizontalAlignment="Left" VerticalAlignment="Top" TextChanged="NameBox3_TextChanged"/>
+        <TextBox x:Name="NameBox4" Text="NAME4" Width="120" Height="50" FontSize="11" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="2" Canvas.Left="507" Canvas.Top="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="NameBox5" Text="NAME5" Width="120" Height="50" FontSize="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="2" Canvas.Left="637" Canvas.Top="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
         <!-- IMPORT/EXPORT -->
-        <Button Content="IMPORT" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="110" Canvas.Top="253" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click_2"/>
-        <Button Content="EXPORT" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="310" Canvas.Top="253" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Content="IMPORT" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="107" Canvas.Top="212" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click_2"/>
+        <Button Content="EXPORT" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="307" Canvas.Top="212" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ExportButton_Click"/>
 
         <!-- Today is .. -->
-        <Button Content="Today is .." Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="110" Canvas.Top="325" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <ComboBox x:Name="timelist" Width="180" Height="50" FontSize="16" Canvas.Left="310" Canvas.Top="325" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button Content="Today is .." Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="107" Canvas.Top="284" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <ComboBox x:Name="timelist" Width="180" Height="50" FontSize="16" Canvas.Left="307" Canvas.Top="284" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
         <!-- Speed Input -->
-        <TextBlock Text="速度(ms)" FontSize="14" Foreground="#195C72" Canvas.Left="323" Canvas.Top="409"/>
-        <TextBox x:Name="SpeedBox" Text="100" Width="60" Height="30" FontSize="14" Canvas.Left="400" Canvas.Top="403" TextChanged="SpeedBox_TextChanged"/>
+        <TextBlock Text="速度(ms)" FontSize="14" Foreground="#195C72" Canvas.Left="320" Canvas.Top="368"/>
+        <TextBox x:Name="SpeedBox" Text="100" Width="60" Height="30" FontSize="14" Canvas.Left="397" Canvas.Top="362" TextChanged="SpeedBox_TextChanged"/>
 
         <!-- GO/STOP/GO then STOP -->
-        <Button x:Name="GoButton" Content="GO!" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="610" Canvas.Top="248" Click="GoButton_Click"/>
-        <Button Content="STOP!" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="610" Canvas.Top="319" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Content="GO then STOP" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="610" Canvas.Top="393" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button x:Name="GoButton" Content="GO!" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="607" Canvas.Top="207" Click="GoButton_Click"/>
+        <Button Content="STOP!" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="607" Canvas.Top="278" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="GO then STOP" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="607" Canvas.Top="352" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click_1"/>
 
         <!-- Footer -->
-        <TextBlock Text="https://github.com/yupengsky/attendanceHelper" FontSize="14" Foreground="#195C72" Canvas.Left="270" Canvas.Top="550"/>
-        <Button Content="缺勤" Width="180" Height="50" Background="#195C72" Foreground="#FFEE0E0E" FontSize="16" Canvas.Left="610" Canvas.Top="475" Click="Button_Click_1" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button Content="出勤" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="375" Canvas.Top="476" Click="Button_Click_1" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Button Content="Shuffle" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="110" Canvas.Top="402" HorizontalAlignment="Center" VerticalAlignment="Top" Click="ShuffleButton_Click"/>
+        <TextBlock Text="https://github.com/yupengsky/attendanceHelper" FontSize="14" Foreground="#195C72" Canvas.Left="117" Canvas.Top="532"/>
+        <Button Content="缺勤" Width="180" Height="50" Background="#195C72" Foreground="#FFEE0E0E" FontSize="16" Canvas.Left="607" Canvas.Top="434" Click="AbsentButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Button Content="出勤" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="342" Canvas.Top="434" Click="Button_Click_1" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Content="Shuffle" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="107" Canvas.Top="361" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ShuffleButton_Click"/>
+        <Button Content="结束考勤" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="107" Canvas.Top="434" Click="EndAttendanceButton_Click" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock x:Name="state" FontSize="20" Foreground="#195C72" Canvas.Left="526" Canvas.Top="33" HorizontalAlignment="Left" VerticalAlignment="Center" Width="325" Text=""/>
+        <TextBlock FontSize="20" Foreground="#195C72" Canvas.Left="438" Canvas.Top="33" HorizontalAlignment="Left" VerticalAlignment="Center"><Run Language="zh-cn" Text="State:"/></TextBlock>
     </Canvas>
 </Window>

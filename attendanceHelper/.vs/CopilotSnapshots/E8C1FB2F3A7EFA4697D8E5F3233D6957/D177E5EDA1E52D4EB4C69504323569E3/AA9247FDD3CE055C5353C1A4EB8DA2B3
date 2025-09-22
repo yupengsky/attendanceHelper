@@ -218,7 +218,6 @@ namespace attendanceHelper
                 if (cell == null) cell = row.CreateCell(colIdx);
                 cell.SetCellValue(0);
             }
-            state.Text = $"{NameBox3.Text} ，已记缺勤";
         }
 
         private void EndAttendanceButton_Click(object sender, RoutedEventArgs e)
@@ -257,7 +256,6 @@ namespace attendanceHelper
                         cell.SetCellValue(1);
                 }
             }
-            state.Text = $"已结束 {time} 的点名";
         }
 
         private void ExportButton_Click(object sender, RoutedEventArgs e)
@@ -265,20 +263,24 @@ namespace attendanceHelper
             if (workbook == null || sheet == null || string.IsNullOrEmpty(importedFilePath)) return;
             string time = timelist.SelectedItem?.ToString();
             if (string.IsNullOrEmpty(time)) return;
-
-            // 生成新文件名（不添加时间后缀）
-            string dir = System.IO.Path.GetDirectoryName(importedFilePath);
-            string name = System.IO.Path.GetFileNameWithoutExtension(importedFilePath);
-            string ext = System.IO.Path.GetExtension(importedFilePath);
-            string newFile = System.IO.Path.Combine(dir, name + ext);
-
+            // 生成新文件名
+            string dir = Path.GetDirectoryName(importedFilePath);
+            string name = Path.GetFileNameWithoutExtension(importedFilePath);
+            string ext = Path.GetExtension(importedFilePath);
+            string dateSuffix = "";
+            DateTime dt;
+            if (DateTime.TryParse(time, out dt))
+                dateSuffix = "_" + dt.ToString("MMdd");
+            else if (time.Length >= 5)
+                dateSuffix = "_" + time.Replace("-","").Substring(4,4); // 0916
+            else
+                dateSuffix = "_" + time;
+            string newFile = Path.Combine(dir, name + dateSuffix + ext);
             using (var fs = new FileStream(newFile, FileMode.Create, FileAccess.Write))
             {
                 workbook.Write(fs);
             }
-
             MessageBox.Show($"已导出: {newFile}");
         }
-
     }
 }

@@ -39,7 +39,8 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-20T10:14:53.338Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -71,9 +72,9 @@
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "E:\\Work\\Git\\Projects\\attendanceHelper\\attendanceHelper\\attendanceHelper\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "attendanceHelper\\MainWindow.xaml.cs",
-              "ToolTip": "E:\\Work\\Git\\Projects\\attendanceHelper\\attendanceHelper\\attendanceHelper\\MainWindow.xaml.cs",
-              "RelativeToolTip": "attendanceHelper\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAKEAAAAAAAAAAIAwwIkAAAAdAAAAAAAAAA==",
+              "ToolTip": "E:\\Work\\Git\\Projects\\attendanceHelper\\attendanceHelper\\attendanceHelper\\MainWindow.xaml.cs*",
+              "RelativeToolTip": "attendanceHelper\\MainWindow.xaml.cs*",
+              "ViewState": "AgIAAAEBAAAAAAAAAAAnwJYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-20T10:04:46.388Z",
               "EditorCaption": ""
