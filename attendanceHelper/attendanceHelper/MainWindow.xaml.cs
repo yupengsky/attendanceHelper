@@ -62,5 +62,15 @@ namespace attendanceHelper
             NameBox4.Text = nameList[3];
             NameBox5.Text = nameList[4];
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            flowTimer.Stop();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

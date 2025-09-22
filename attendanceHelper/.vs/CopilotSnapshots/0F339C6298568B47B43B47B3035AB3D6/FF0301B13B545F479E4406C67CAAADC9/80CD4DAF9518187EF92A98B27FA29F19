@@ -11,7 +11,6 @@
         <TextBlock Text="AttendanceHelper" FontSize="20" Foreground="#195C72" Canvas.Left="20" Canvas.Top="20"/>
 
         <!-- Description -->
-        <TextBlock Text="here is five text boxes ,the names will exchange like swipe life to right,and will stop" FontSize="16" Foreground="#195C72" Canvas.Left="200" Canvas.Top="70"/>
 
         <!-- Name Boxes -->
         <TextBox x:Name="NameBox1" Text="NAME1" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Canvas.Left="120" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
@@ -34,10 +33,11 @@
 
         <!-- GO/STOP/GO then STOP -->
         <Button x:Name="GoButton" Content="GO!" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="610" Canvas.Top="248" Click="GoButton_Click"/>
-        <Button Content="STOP!" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="610" Canvas.Top="319" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Content="GO then STOP" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="610" Canvas.Top="393" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button Content="STOP!" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="610" Canvas.Top="319" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button Content="GO then STOP" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="610" Canvas.Top="393" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
         <!-- Footer -->
+        <TextBlock Text="ByYupeng" FontSize="16" Foreground="#195C72" Canvas.Left="370" Canvas.Top="520"/>
         <TextBlock Text="https://github.com/yupengsky/attendanceHelper" FontSize="14" Foreground="#195C72" Canvas.Left="270" Canvas.Top="550"/>
     </Canvas>
 </Window>
