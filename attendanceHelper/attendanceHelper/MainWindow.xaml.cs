@@ -72,5 +72,10 @@ namespace attendanceHelper
         {
 
         }
+
+        private void NameBox3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

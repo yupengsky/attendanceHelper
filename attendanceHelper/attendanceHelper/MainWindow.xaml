@@ -14,11 +14,11 @@
         <TextBlock Text="here is five text boxes ,the names will exchange like swipe life to right,and will stop" FontSize="16" Foreground="#195C72" Canvas.Left="200" Canvas.Top="70"/>
 
         <!-- Name Boxes -->
-        <TextBox x:Name="NameBox1" Text="NAME1" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Canvas.Left="120" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <TextBox x:Name="NameBox2" Text="NAME2" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Canvas.Left="250" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <TextBox x:Name="NameBox3" Text="NAME3" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Red" BorderThickness="2" Canvas.Left="380" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <TextBox x:Name="NameBox4" Text="NAME4" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Canvas.Left="510" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <TextBox x:Name="NameBox5" Text="NAME5" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Canvas.Left="640" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="NameBox1" Text="NAME1" Width="120" Height="50" FontSize="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="2" Canvas.Left="120" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top" UndoLimit="98"/>
+        <TextBox x:Name="NameBox2" Text="NAME2" Width="120" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="2" Canvas.Left="250" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="11"/>
+        <TextBox x:Name="NameBox3" Text="NAME3" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Red" BorderThickness="2" Canvas.Left="380" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top" TextChanged="NameBox3_TextChanged"/>
+        <TextBox x:Name="NameBox4" Text="NAME4" Width="120" Height="50" FontSize="11" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="2" Canvas.Left="510" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="NameBox5" Text="NAME5" Width="120" Height="50" FontSize="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="2" Canvas.Left="640" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
         <!-- IMPORT/EXPORT -->
         <Button Content="IMPORT" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="107" Canvas.Top="277" HorizontalAlignment="Center" VerticalAlignment="Top"/>
