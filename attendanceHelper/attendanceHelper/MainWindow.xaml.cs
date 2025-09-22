@@ -1,57 +1,284 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
+using System.Windows.Documents;
+using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using Microsoft.Win32;
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
+using System.IO;
 
 namespace attendanceHelper
 {
+    /// <summary>
+    /// MainWindow.xaml 的交互逻辑
+    /// </summary>
     public partial class MainWindow : Window
     {
+        private DispatcherTimer flowTimer;
+        private List<string> nameList;
+        private List<string> timeList;
+        private IWorkbook workbook; // 保存导入的Excel
+        private ISheet sheet; // 保存导入的Sheet
+        private string importedFilePath; // 保存导入的文件路径
+
         public MainWindow()
         {
             InitializeComponent();
-            CheckStateAndOpenHelloTeacher();
-            // 初始化按钮状态
-            isOK.IsEnabled = true;
-            ((Button)this.FindName("导入名单")).IsEnabled = false;
-            ((Button)this.FindName("查看考勤情况")).IsEnabled = false;
-            ((Button)this.FindName("导出名单")).IsEnabled = false;
-            ((Button)this.FindName("开始考勤")).IsEnabled = false;
-            //GlobalCodeHere.Text = App.GlobalCode;
+            nameList = new List<string>
+            {
+                NameBox1.Text,
+                NameBox2.Text,
+                NameBox3.Text,
+                NameBox4.Text,
+                NameBox5.Text
+            };
+            timeList = new List<string>();
+            flowTimer = new DispatcherTimer();
+            flowTimer.Interval = TimeSpan.FromMilliseconds(100); // 更快的滚动速度
+            flowTimer.Tick += FlowTimer_Tick;
         }
 
-        private void CheckStateAndOpenHelloTeacher()
+        private void GoButton_Click(object sender, RoutedEventArgs e)
         {
-            if (stateText != null && stateText.Text == "未注册")
+            int speed = 10;
+            if (int.TryParse(SpeedBox.Text, out int value) && value > 0)
             {
-                var helloTeacherWindow = new HelloTeacher();
-                helloTeacherWindow.Show();
+                speed = value;
+            }
+            flowTimer.Interval = TimeSpan.FromMilliseconds(speed);
+            flowTimer.Start();
+        }
+
+        private void FlowTimer_Tick(object sender, EventArgs e)
+        {
+            // Move last to first (right shift)
+            var last = nameList[nameList.Count - 1];
+            nameList.RemoveAt(nameList.Count - 1);
+            nameList.Insert(0, last);
+            NameBox1.Text = nameList[0];
+            NameBox2.Text = nameList[1];
+            NameBox3.Text = nameList[2];
+            NameBox4.Text = nameList[3];
+            NameBox5.Text = nameList[4];
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            flowTimer.Stop();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NameBox3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            // IMPORT button click
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                importedFilePath = openFileDialog.FileName;
+                using (var stream = new FileStream(importedFilePath, FileMode.Open, FileAccess.Read))
+                {
+                    workbook = new XSSFWorkbook(stream);
+                    sheet = workbook.GetSheetAt(0);
+                    var maxNames = 150;
+                    var maxTimes = 50;
+                    nameList.Clear();
+                    timeList.Clear();
+                    // 读取时间行（第一行，去掉A1）
+                    IRow timeRow = sheet.GetRow(0);
+                    for (int i = 1; i < Math.Min(timeRow.LastCellNum, maxTimes + 1); i++)
+                    {
+                        var cell = timeRow.GetCell(i);
+                        if (cell != null)
+                            timeList.Add(cell.ToString());
+                    }
+                    // 读取姓名列（第一列，去掉A1）
+                    for (int i = 1; i < Math.Min(sheet.LastRowNum + 1, maxNames + 1); i++)
+                    {
+                        IRow row = sheet.GetRow(i);
+                        if (row != null)
+                        {
+                            var cell = row.GetCell(0);
+                            if (cell != null)
+                                nameList.Add(cell.ToString());
+                        }
+                    }
+                    // 刷新姓名流动区
+                    for (int i = 0; i < 5; i++)
+                    {
+                        if (i < nameList.Count)
+                        {
+                            switch (i)
+                            {
+                                case 0: NameBox1.Text = nameList[0]; break;
+                                case 1: NameBox2.Text = nameList[1]; break;
+                                case 2: NameBox3.Text = nameList[2]; break;
+                                case 3: NameBox4.Text = nameList[3]; break;
+                                case 4: NameBox5.Text = nameList[4]; break;
+                            }
+                        }
+                    }
+                    // 刷新时间下拉区
+                    timelist.Items.Clear();
+                    foreach (var t in timeList)
+                    {
+                        timelist.Items.Add(t);
+                    }
+                    if (timelist.Items.Count > 0)
+                        timelist.SelectedIndex = 0;
+                }
             }
         }
 
-        public void EnableIsOKButton()
+        private void SpeedBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            isOK.IsEnabled = true;
+
         }
 
-        private void isOK_Click(object sender, RoutedEventArgs e)
+        private void ShuffleButton_Click(object sender, RoutedEventArgs e)
         {
-            if (PasswordTextBox.Text == App.GlobalCode)
+            // Fisher–Yates 洗牌算法
+            Random rng = new Random(); // 默认用系统时间做种子
+            int n = nameList.Count;
+            for (int i = n - 1; i > 0; i--)
             {
-                //to do here fore error
-                tips.Text = "已经进入教师模式";
-                ((Button)this.FindName("导入名单")).IsEnabled = true;
-                ((Button)this.FindName("查看考勤情况")).IsEnabled = true;
-                ((Button)this.FindName("导出名单")).IsEnabled = true;
-                ((Button)this.FindName("开始考勤")).IsEnabled = true;
+                int j = rng.Next(i + 1);
+                var temp = nameList[i];
+                nameList[i] = nameList[j];
+                nameList[j] = temp;
             }
-            //to do here for error 
+            // 刷新前五个 NameBox
+            if (nameList.Count >= 5)
+            {
+                NameBox1.Text = nameList[0];
+                NameBox2.Text = nameList[1];
+                NameBox3.Text = nameList[2];
+                NameBox4.Text = nameList[3];
+                NameBox5.Text = nameList[4];
+            }
         }
 
-        private void isOK_Click_1(object sender, RoutedEventArgs e)
+        private void AbsentButton_Click(object sender, RoutedEventArgs e)
         {
-            // 兼容XAML中的Click事件
-            isOK_Click(sender, e);
+            if (workbook == null || sheet == null) return;
+            string name = NameBox3.Text;
+            string time = timelist.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(time)) return;
+            // 找到姓名行和时间列
+            int rowIdx = -1, colIdx = -1;
+            // 时间在第0行，从第1列开始
+            IRow timeRow = sheet.GetRow(0);
+            for (int i = 1; i < timeRow.LastCellNum; i++)
+            {
+                var cell = timeRow.GetCell(i);
+                if (cell != null && cell.ToString() == time)
+                {
+                    colIdx = i;
+                    break;
+                }
+            }
+            // 姓名在第0列，从第1行开始
+            for (int i = 1; i <= sheet.LastRowNum; i++)
+            {
+                IRow row = sheet.GetRow(i);
+                if (row != null)
+                {
+                    var cell = row.GetCell(0);
+                    if (cell != null && cell.ToString() == name)
+                    {
+                        rowIdx = i;
+                        break;
+                    }
+                }
+            }
+            if (rowIdx != -1 && colIdx != -1)
+            {
+                IRow row = sheet.GetRow(rowIdx);
+                if (row == null) row = sheet.CreateRow(rowIdx);
+                var cell = row.GetCell(colIdx);
+                if (cell == null) cell = row.CreateCell(colIdx);
+                cell.SetCellValue(0);
+            }
+            state.Text = $"{NameBox3.Text} ，已记缺勤";
         }
+
+        private void EndAttendanceButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (workbook == null || sheet == null) return;
+            string time = timelist.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(time)) return;
+            // 找到时间列
+            int colIdx = -1;
+            IRow timeRow = sheet.GetRow(0);
+            for (int i = 1; i < timeRow.LastCellNum; i++)
+            {
+                var cell = timeRow.GetCell(i);
+                if (cell != null && cell.ToString() == time)
+                {
+                    colIdx = i;
+                    break;
+                }
+            }
+            if (colIdx == -1) return;
+            // 遍历所有姓名行
+            for (int i = 1; i <= sheet.LastRowNum; i++)
+            {
+                IRow row = sheet.GetRow(i);
+                if (row == null) continue;
+                var cell = row.GetCell(colIdx);
+                if (cell == null)
+                {
+                    cell = row.CreateCell(colIdx);
+                    cell.SetCellValue(1);
+                }
+                else
+                {
+                    var v = cell.ToString();
+                    if (v != "0" && v != "1")
+                        cell.SetCellValue(1);
+                }
+            }
+            state.Text = $"已结束 {time} 的点名";
+        }
+
+        private void ExportButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (workbook == null || sheet == null || string.IsNullOrEmpty(importedFilePath)) return;
+            string time = timelist.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(time)) return;
+
+            // 生成新文件名（不添加时间后缀）
+            string dir = System.IO.Path.GetDirectoryName(importedFilePath);
+            string name = System.IO.Path.GetFileNameWithoutExtension(importedFilePath);
+            string ext = System.IO.Path.GetExtension(importedFilePath);
+            string newFile = System.IO.Path.Combine(dir, name + ext);
+
+            using (var fs = new FileStream(newFile, FileMode.Create, FileAccess.Write))
+            {
+                workbook.Write(fs);
+            }
+
+            MessageBox.Show($"已导出: {newFile}");
+        }
+
     }
 }

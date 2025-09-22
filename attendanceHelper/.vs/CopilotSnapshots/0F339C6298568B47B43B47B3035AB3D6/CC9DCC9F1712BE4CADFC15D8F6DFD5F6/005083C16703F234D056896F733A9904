@@ -1,0 +1,59 @@
+﻿<Window x:Class="attendanceHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:attendanceHelper"
+        mc:Ignorable="d"
+        Title="AttendanceHelper" Height="600" Width="900">
+    <Grid Margin="20">
+        <!-- Title -->
+        <TextBlock Text="AttendanceHelper" FontSize="20" Foreground="#195C72" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+
+        <!-- Description -->
+        <TextBlock Text="here is five text boxes ,the names will exchange like swipe life to right,and will stop" FontSize="16" Foreground="#195C72" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top"/>
+
+        <!-- Name Boxes -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,150,0,0" Height="60">
+            <TextBox Text="NAME1" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Margin="5"/>
+            <TextBox Text="NAME2" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Margin="5"/>
+            <TextBox Text="NAME3" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Red" BorderThickness="2" Margin="5"/>
+            <TextBox Text="NAME4" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Margin="5"/>
+            <TextBox Text="NAME5" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Margin="5"/>
+        </StackPanel>
+
+        <!-- Buttons and Today -->
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,250,0,0" Height="180" Width="700">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <!-- Left Buttons -->
+            <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+                <Button Content="IMPORT" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Margin="10"/>
+                <Button Content="EXPORT" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Margin="10"/>
+            </StackPanel>
+            <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+                <Button Content="Today is .." Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Margin="10"/>
+                <TextBox Width="180" Height="50" FontSize="16" Margin="10"/>
+            </StackPanel>
+            <!-- Right Buttons -->
+            <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Button Content="GO!" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Margin="10"/>
+                <Button Content="STOP!" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Margin="10"/>
+                <Button Content="GO then STOP" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Margin="10"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Footer -->
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10">
+            <TextBlock Text="ByYupeng" FontSize="16" Foreground="#195C72" HorizontalAlignment="Center"/>
+            <TextBlock Text="https://github.com/yupengsky/attendanceHelper" FontSize="14" Foreground="#195C72" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>

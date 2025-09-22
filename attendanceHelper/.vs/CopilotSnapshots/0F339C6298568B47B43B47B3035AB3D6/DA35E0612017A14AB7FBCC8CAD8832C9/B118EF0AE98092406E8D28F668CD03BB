@@ -1,0 +1,44 @@
+﻿<Window x:Class="attendanceHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:attendanceHelper"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="900">
+    <Canvas>
+        <!-- Title -->
+        <TextBlock Text="AttendanceHelper" FontSize="20" Foreground="#195C72" Canvas.Left="20" Canvas.Top="20"/>
+
+        <!-- Description -->
+        <TextBlock Text="here is five text boxes ,the names will exchange like swipe life to right,and will stop" FontSize="16" Foreground="#195C72" Canvas.Left="200" Canvas.Top="70"/>
+
+        <!-- Name Boxes -->
+        <TextBox x:Name="NameBox1" Text="NAME1" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Canvas.Left="120" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="NameBox2" Text="NAME2" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Canvas.Left="250" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="NameBox3" Text="NAME3" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Red" BorderThickness="2" Canvas.Left="380" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="NameBox4" Text="NAME4" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Canvas.Left="510" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="NameBox5" Text="NAME5" Width="120" Height="50" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#195C72" BorderThickness="2" Canvas.Left="640" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <!-- IMPORT/EXPORT -->
+        <Button Content="IMPORT" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="107" Canvas.Top="277" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button Content="EXPORT" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="307" Canvas.Top="277" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <!-- Today is .. -->
+        <Button Content="Today is .." Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="107" Canvas.Top="368" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox Width="180" Height="50" FontSize="16" Canvas.Left="307" Canvas.Top="368" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <!-- Speed Input -->
+        <TextBlock Text="速度(ms)" FontSize="14" Foreground="#195C72" Canvas.Left="610" Canvas.Top="200"/>
+        <TextBox x:Name="SpeedBox" Text="100" Width="60" Height="30" FontSize="14" Canvas.Left="680" Canvas.Top="195"/>
+
+        <!-- GO/STOP/GO then STOP -->
+        <Button x:Name="GoButton" Content="GO!" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="610" Canvas.Top="248" Click="GoButton_Click"/>
+        <Button Content="STOP!" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="610" Canvas.Top="319" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button Content="GO then STOP" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="610" Canvas.Top="393" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <!-- Footer -->
+        <TextBlock Text="ByYupeng" FontSize="16" Foreground="#195C72" Canvas.Left="370" Canvas.Top="520"/>
+        <TextBlock Text="https://github.com/yupengsky/attendanceHelper" FontSize="14" Foreground="#195C72" Canvas.Left="270" Canvas.Top="550"/>
+    </Canvas>
+</Window>
