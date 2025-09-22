@@ -150,28 +150,5 @@ namespace attendanceHelper
         {
 
         }
-
-        private void ShuffleButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Fisher–Yates 洗牌算法
-            Random rng = new Random(); // 默认用系统时间做种子
-            int n = nameList.Count;
-            for (int i = n - 1; i > 0; i--)
-            {
-                int j = rng.Next(i + 1);
-                var temp = nameList[i];
-                nameList[i] = nameList[j];
-                nameList[j] = temp;
-            }
-            // 刷新前五个 NameBox
-            if (nameList.Count >= 5)
-            {
-                NameBox1.Text = nameList[0];
-                NameBox2.Text = nameList[1];
-                NameBox3.Text = nameList[2];
-                NameBox4.Text = nameList[3];
-                NameBox5.Text = nameList[4];
-            }
-        }
     }
 }

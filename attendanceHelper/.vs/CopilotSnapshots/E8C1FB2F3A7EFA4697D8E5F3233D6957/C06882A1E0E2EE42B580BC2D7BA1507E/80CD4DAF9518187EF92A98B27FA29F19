@@ -40,6 +40,6 @@
         <TextBlock Text="https://github.com/yupengsky/attendanceHelper" FontSize="14" Foreground="#195C72" Canvas.Left="270" Canvas.Top="550"/>
         <Button Content="缺勤" Width="180" Height="50" Background="#195C72" Foreground="#FFEE0E0E" FontSize="16" Canvas.Left="610" Canvas.Top="475" Click="Button_Click_1" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold"/>
         <Button Content="出勤" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="375" Canvas.Top="476" Click="Button_Click_1" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Button Content="Shuffle" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="110" Canvas.Top="402" HorizontalAlignment="Center" VerticalAlignment="Top" Click="ShuffleButton_Click"/>
+        <Button Content="Shuffle" Width="180" Height="50" Background="#195C72" Foreground="White" FontSize="16" Canvas.Left="110" Canvas.Top="402" HorizontalAlignment="Center" VerticalAlignment="Top"/>
     </Canvas>
 </Window>
