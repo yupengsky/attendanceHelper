@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "E:\\Work\\Git\\Projects\\attendanceHelper\\attendanceHelper\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{384280BB-2CEE-4794-A0D9-E54FBF12EC90}|attendanceHelper\\attendanceHelper.csproj|E:\\Work\\Git\\Projects\\attendanceHelper\\attendanceHelper\\attendancehelper\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{384280BB-2CEE-4794-A0D9-E54FBF12EC90}|attendanceHelper\\attendanceHelper.csproj|E:\\Work\\Git\\Projects\\attendanceHelper\\attendanceHelper\\attendancehelper\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{384280BB-2CEE-4794-A0D9-E54FBF12EC90}|attendanceHelper\\attendanceHelper.csproj|solutionrelative:attendancehelper\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{384280BB-2CEE-4794-A0D9-E54FBF12EC90}|attendanceHelper\\attendanceHelper.csproj|e:\\work\\git\\projects\\attendancehelper\\attendancehelper\\attendancehelper\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{384280BB-2CEE-4794-A0D9-E54FBF12EC90}|attendanceHelper\\attendanceHelper.csproj|solutionrelative:attendancehelper\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -11,11 +15,7 @@
       "RelativeMoniker": "D:0:0:{384280BB-2CEE-4794-A0D9-E54FBF12EC90}|attendanceHelper\\attendanceHelper.csproj|solutionrelative:attendancehelper\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{384280BB-2CEE-4794-A0D9-E54FBF12EC90}|attendanceHelper\\attendanceHelper.csproj|E:\\Work\\Git\\Projects\\attendanceHelper\\attendanceHelper\\attendancehelper\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{384280BB-2CEE-4794-A0D9-E54FBF12EC90}|attendanceHelper\\attendanceHelper.csproj|solutionrelative:attendancehelper\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{384280BB-2CEE-4794-A0D9-E54FBF12EC90}|attendanceHelper\\attendanceHelper.csproj|e:\\work\\git\\projects\\attendancehelper\\attendancehelper\\attendancehelper\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{384280BB-2CEE-4794-A0D9-E54FBF12EC90}|attendanceHelper\\attendanceHelper.csproj|E:\\Work\\Git\\Projects\\attendanceHelper\\attendanceHelper\\attendancehelper\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{384280BB-2CEE-4794-A0D9-E54FBF12EC90}|attendanceHelper\\attendanceHelper.csproj|solutionrelative:attendancehelper\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
@@ -39,12 +39,11 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-20T10:14:53.338Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "E:\\Work\\Git\\Projects\\attendanceHelper\\attendanceHelper\\attendanceHelper\\MainWindow.xaml",
               "RelativeDocumentMoniker": "attendanceHelper\\MainWindow.xaml",
@@ -56,7 +55,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "App.xaml",
               "DocumentMoniker": "E:\\Work\\Git\\Projects\\attendanceHelper\\attendanceHelper\\attendanceHelper\\App.xaml",
               "RelativeDocumentMoniker": "attendanceHelper\\App.xaml",
@@ -68,13 +67,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "E:\\Work\\Git\\Projects\\attendanceHelper\\attendanceHelper\\attendanceHelper\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "attendanceHelper\\MainWindow.xaml.cs",
               "ToolTip": "E:\\Work\\Git\\Projects\\attendanceHelper\\attendanceHelper\\attendanceHelper\\MainWindow.xaml.cs",
               "RelativeToolTip": "attendanceHelper\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAEBAAAAAAAAAAAnwJYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACUBAAAAAAAAAIAwwJsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-20T10:04:46.388Z",
               "EditorCaption": ""
