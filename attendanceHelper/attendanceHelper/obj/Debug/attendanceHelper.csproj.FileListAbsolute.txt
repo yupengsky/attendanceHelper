@@ -21,4 +21,3 @@ E:\Work\Git\Projects\attendanceHelper\attendanceHelper\attendanceHelper\obj\Debu
 E:\Work\Git\Projects\attendanceHelper\attendanceHelper\attendanceHelper\obj\Debug\attendan.DCBFE0B8.Up2Date
 E:\Work\Git\Projects\attendanceHelper\attendanceHelper\attendanceHelper\obj\Debug\attendanceHelper.exe
 E:\Work\Git\Projects\attendanceHelper\attendanceHelper\attendanceHelper\obj\Debug\attendanceHelper.pdb
-E:\Work\Git\Projects\attendanceHelper\attendanceHelper\attendanceHelper\obj\Debug\attendanceHelper.exe.config

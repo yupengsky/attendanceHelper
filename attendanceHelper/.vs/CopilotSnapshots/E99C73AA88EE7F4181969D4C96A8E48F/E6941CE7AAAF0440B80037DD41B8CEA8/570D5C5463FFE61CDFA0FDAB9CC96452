@@ -31,7 +31,6 @@ namespace attendanceHelper
         private ISheet sheet; // 保存导入的Sheet
         private string importedFilePath; // 保存导入的文件路径
         private bool _isExported = false; // 标记是否已导出
-        private bool _isAttendanceEnded = false; // 标记是否已结束考勤
 
         public MainWindow()
         {
@@ -261,7 +260,6 @@ namespace attendanceHelper
                 }
             }
             state.Text = $"已结束 {time} 的点名";
-            _isAttendanceEnded = true; // 设置已结束考勤标志
         }
 
         private void ExportButton_Click(object sender, RoutedEventArgs e)
@@ -269,12 +267,6 @@ namespace attendanceHelper
             if (workbook == null || sheet == null || string.IsNullOrEmpty(importedFilePath)) return;
             string time = timelist.SelectedItem?.ToString();
             if (string.IsNullOrEmpty(time)) return;
-
-            // 如果还没结束考勤，自动结束考勤
-            if (!_isAttendanceEnded)
-            {
-                EndAttendanceButton_Click(null, null);
-            }
 
             // 生成新文件名（不添加时间后缀）
             string dir = System.IO.Path.GetDirectoryName(importedFilePath);
